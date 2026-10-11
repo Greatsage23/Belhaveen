@@ -1,0 +1,12 @@
+import { readFile, access } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const html = await readFile('dist/index.html', 'utf8');
+const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+assert.equal(ids.length, new Set(ids).size, 'IDs must be unique');
+for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match[1]), `Missing anchor ${match[1]}`);
+for (const match of html.matchAll(/(?:src|href)="((?:assets\/|styles\.|app\.)[^"]+)"/g)) await access('dist/' + match[1]);
+for (const match of html.matchAll(/<img\b[^>]*>/g)) assert(/alt="[^"]*"/.test(match[0]), 'Images must have alt attributes');
+assert(html.includes('tel:+233244919825'));
+assert(html.includes('https://bms.edulinkghana.net/login'));
+assert(html.includes('This website does not store your answers.'));
+console.log('Passed: local assets, navigation targets, unique IDs, image alt attributes and contact destinations.');
