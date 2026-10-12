@@ -18,3 +18,18 @@ document.querySelectorAll('[data-image]').forEach(button => button.addEventListe
 document.querySelector('#close-photo').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const bannerPhotos = [
+  ['assets/community.jpg', 'Belhaven pupils learning together outdoors among the school trees', 'Learning and growing together'],
+  ['assets/hero.jpg', 'Belhaven quiz team at the Junior Science and Maths Quiz', 'Confidence on the national stage'],
+  ['assets/primary.jpg', 'Primary school life at Belhaven', 'A foundation for lifelong learning']
+];
+let bannerIndex = 0;
+function changeBanner(direction) {
+  bannerIndex = (bannerIndex + direction + bannerPhotos.length) % bannerPhotos.length;
+  const [src, alt, caption] = bannerPhotos[bannerIndex];
+  const image = document.querySelector('#banner-image'); image.src = src; image.alt = alt;
+  document.querySelector('#slide-caption').textContent = caption;
+}
+document.querySelector('.previous').addEventListener('click', () => changeBanner(-1));
+document.querySelector('.next').addEventListener('click', () => changeBanner(1));
