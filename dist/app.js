@@ -33,3 +33,17 @@ function changeBanner(direction) {
 }
 document.querySelector('.previous').addEventListener('click', () => changeBanner(-1));
 document.querySelector('.next').addEventListener('click', () => changeBanner(1));
+
+const studentDialog = document.querySelector('#student-dialog');
+document.querySelector('#student-login').addEventListener('click', () => studentDialog.showModal());
+document.querySelector('#close-student').addEventListener('click', () => studentDialog.close());
+function updateActiveNavigation() {
+  const target = location.hash || '#main';
+  navigation.querySelectorAll('a').forEach(link => {
+    const active = link.getAttribute('href') === target;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+  });
+}
+window.addEventListener('hashchange', updateActiveNavigation);
+updateActiveNavigation();
