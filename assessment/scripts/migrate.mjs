@@ -1,0 +1,5 @@
+import {readFile,readdir} from 'node:fs/promises';
+import pg from 'pg';
+if(!process.env.DATABASE_URL)throw new Error('Set DATABASE_URL in the environment.');
+const client=new pg.Client({connectionString:process.env.DATABASE_URL});await client.connect();
+try{await client.query('BEGIN');await client.query('SELECT pg_advisory_xact_lock(76233511)');await client.query('CREATE TABLE IF NOT EXISTS bms_migrations(name text PRIMARY KEY,applied_at timestamptz DEFAULT now())');for(const name of (await readdir(new URL('../migrations/',import.meta.url))).filter(n=>n.endsWith('.sql')).sort()){const existing=await client.query('SELECT name FROM bms_migrations WHERE name=$1',[name]);if(existing.rowCount)continue;await client.query(await readFile(new URL('../migrations/'+name,import.meta.url),'utf8'));await client.query('INSERT INTO bms_migrations(name) VALUES($1)',[name]);console.log('Applied '+name);}await client.query('COMMIT');}catch(e){await client.query('ROLLBACK');throw e;}finally{await client.end();}
