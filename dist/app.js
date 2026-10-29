@@ -35,7 +35,7 @@ document.querySelector('.previous').addEventListener('click', () => changeBanner
 document.querySelector('.next').addEventListener('click', () => changeBanner(1));
 
 const studentDialog = document.querySelector('#student-dialog');
-document.querySelector('#student-login').addEventListener('click', () => studentDialog.showModal());
+document.querySelectorAll('[data-portal-role]').forEach(button => button.addEventListener('click', () => { const role=button.dataset.portalRole; document.querySelector('#student-dialog-title').textContent=role.charAt(0).toUpperCase()+role.slice(1)+' portal'; studentDialog.showModal(); }));
 document.querySelector('#close-student').addEventListener('click', () => studentDialog.close());
 function updateActiveNavigation() {
   const target = location.hash || '#main';
