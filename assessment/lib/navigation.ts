@@ -4,6 +4,7 @@ const allowed:Record<Role,readonly string[]>={
   administrator:['Dashboard','Scorebook','Administrator','Resources','Reports','Overall Performance','Settings'],
   headteacher:['Dashboard','Scorebook','Headteacher','Resources','Reports','Overall Performance','Settings'],
   teacher:['Dashboard','Scorebook','Teacher Portal','Resources','Settings'],
+  parent:['Dashboard','Reports','Resources','Settings'],
   student:['Dashboard','Scorebook','Resources','Reports','Settings'],
 };
 export function canNavigate(role:Role,view:string){return allowed[role]?.includes(view)??false;}

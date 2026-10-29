@@ -16,3 +16,5 @@ test('manager workspaces follow the authenticated role',()=>{
   assert.equal(canNavigate('administrator','Administrator'),true);
   assert.equal(canNavigate('student','Unknown'),false);
 });
+
+test('parents cannot navigate to staff workspaces',()=>{for(const view of ['Administrator','Headteacher','Teacher Portal','Scorebook','Overall Performance'])assert.equal(canNavigate('parent',view),false);assert.equal(canNavigate('parent','Dashboard'),true);});

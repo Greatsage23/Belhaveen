@@ -44,3 +44,9 @@ The migration is additive, uses `bms_` table names and creates no students, staf
 Create a separate Vercel project using this repository and Root Directory `assessment`, with the Next.js preset and the committed pnpm lockfile. Supply production environment values in Vercel, run database setup, and verify role workflows before publishing portal links on the public website. Do not change the repository-root static website configuration to deploy this application.
 
 Do not seed production with test people or marks. Run authenticated integration tests only against a dedicated disposable test database. Preserve existing academic records through subsequent migrations.
+
+## Latest implementation changes
+
+New assessments use six exercises and 125 raw marks. Migration 002 preserves existing rows as scheme version 1 and uses version 2 for new rows. Legacy rows are read-only. Score saves are section-specific, clear the edited section’s migrated contribution until migration, invalidate publication and check revision conflicts.
+
+Migration 003 adds parent accounts with explicit child links. Managers create parent accounts in Student List; parents must change temporary passwords before opening their dashboard. Parent results and report exports are limited to linked children and published marks. These database workflows still require integration testing against an authorised test database. Public login buttons show setup status until the new portal is deployed and connected.
