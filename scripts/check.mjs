@@ -7,6 +7,7 @@ for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(ids.includes(match
 for (const match of html.matchAll(/(?:src|href)="((?:assets\/|styles\.|app\.)[^"]+)"/g)) await access('dist/' + match[1]);
 for (const match of html.matchAll(/<img\b[^>]*>/g)) assert(/alt="[^"]*"/.test(match[0]), 'Images must have alt attributes');
 assert(html.includes('tel:+233244919825'));
-assert(html.includes('https://bms.edulinkghana.net/login'));
+assert(!html.includes('https://bms.edulinkghana.net/login'), 'Old EduLink logins must not be present');
+for(const role of ['administrator','teacher','headteacher','student','parent']) assert(html.includes('data-portal-role="'+role+'"'));
 assert(html.includes('This website does not store your answers.'));
 console.log('Passed: local assets, navigation targets, unique IDs, image alt attributes and contact destinations.');
