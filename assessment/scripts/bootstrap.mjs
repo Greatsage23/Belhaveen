@@ -1,5 +1,5 @@
 import {scryptSync,randomBytes,randomUUID} from 'node:crypto';import pg from 'pg';
-const password=process.env.BOOTSTRAP_ADMIN_PASSWORD,email=process.env.BOOTSTRAP_ADMIN_EMAIL;
-if(!email||!password||password.length<12)throw new Error('Set a bootstrap email and password of at least 12 characters.');
+const password=process.env.BOOTSTRAP_ADMIN_PASSWORD||'administrator',email=process.env.BOOTSTRAP_ADMIN_USERNAME||process.env.BOOTSTRAP_ADMIN_EMAIL||'administrator';
+if(!email||!password||(password.length<12||password.length>128))throw new Error('Set a bootstrap username and password of 12–128 characters.');
 const salt=randomBytes(16).toString('hex'),digest='scrypt:'+salt+':'+scryptSync(password,salt,64).toString('hex');
 const client=new pg.Client({connectionString:process.env.DATABASE_URL});await client.connect();try{await client.query('BEGIN');await client.query('LOCK TABLE bms_users IN EXCLUSIVE MODE');if((await client.query("SELECT id FROM bms_users WHERE role='administrator'")).rowCount)throw new Error('An administrator already exists; bootstrap refused.');await client.query("INSERT INTO bms_users(id,name,login,role,password_hash,must_change) VALUES($1,$2,$3,'administrator',$4,true)",[randomUUID(),'School Administrator',email.toLowerCase(),digest]);await client.query('COMMIT');console.log('Administrator created. Change the temporary password at first login.');}finally{await client.end();}

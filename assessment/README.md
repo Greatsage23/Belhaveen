@@ -50,3 +50,7 @@ Do not seed production with test people or marks. Run authenticated integration 
 New assessments use six exercises and 125 raw marks. Migration 002 preserves existing rows as scheme version 1 and uses version 2 for new rows. Legacy rows are read-only. Score saves are section-specific, clear the edited section’s migrated contribution until migration, invalidate publication and check revision conflicts.
 
 Migration 003 adds parent accounts with explicit child links. Managers create parent accounts in Student List; parents must change temporary passwords before opening their dashboard. Parent results and report exports are limited to linked children and published marks. These database workflows still require integration testing against an authorised test database. Public login buttons show setup status until the new portal is deployed and connected.
+
+## Requested initial login credentials
+
+For a new installation only, bootstrap defaults to username `administrator` and temporary password `administrator`. Environment overrides remain supported. Bootstrap refuses to overwrite an existing administrator. New and imported students use their unique index number and temporary password `0000` unless a unique 12–128 character temporary password is supplied. Student resets also accept `0000`. Both roles must change their temporary password before accessing protected records; private passwords must be 12–128 characters and differ from the current password. These source defaults do not create or reset accounts in an unconnected database.
