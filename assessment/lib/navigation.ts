@@ -18,6 +18,10 @@ export type DashboardAction={label:string;view:string;anchor?:string;resource?:s
 export function dashboardActions(role:Role):DashboardAction[]{
   const management=role==='administrator'?'Administrator':'Headteacher';
   if(role==='administrator'||role==='headteacher')return [
+    {label:'Add student',view:management,anchor:'Add-Student'},
+    {label:'Add teacher',view:management,anchor:'Add-Teacher'},
+    {label:'Assign students to classes',view:management,anchor:'Assign-Students'},
+    {label:'Assign teachers to classes and subjects',view:management,anchor:'Assign-Teachers'},
     {label:'Student management',view:management,anchor:'Student-List'},
     {label:'Staff and teaching assignments',view:management,anchor:'Subject-Teachers'},
     {label:'Approve lesson notes',view:management,anchor:'Approve-Lesson-Notes'},
