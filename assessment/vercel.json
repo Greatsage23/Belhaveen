@@ -5,6 +5,6 @@
   "buildCommand": "pnpm build",
   "outputDirectory": ".next",
   "env": {
-    "APP_ORIGIN": "https://belhaveen-assessment.vercel.app"
+    "APP_ORIGIN": "https://belhaveen.vercel.app"
   }
 }

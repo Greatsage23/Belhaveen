@@ -3,5 +3,23 @@
   "framework": null,
   "installCommand": "",
   "buildCommand": "node --check dist/app.js && node scripts/check.mjs",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/portal",
+      "destination": "https://belhaveen-assessment.vercel.app/portal"
+    },
+    {
+      "source": "/portal/:path*",
+      "destination": "https://belhaveen-assessment.vercel.app/portal/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://belhaveen-assessment.vercel.app/api/:path*"
+    },
+    {
+      "source": "/_next/:path*",
+      "destination": "https://belhaveen-assessment.vercel.app/_next/:path*"
+    }
+  ]
 }

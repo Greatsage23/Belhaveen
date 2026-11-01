@@ -1,1 +1,2 @@
-import Portal from './portal/portal';export default function Home(){return <Portal/>}
+import {redirect} from 'next/navigation';
+export default function Home(){redirect('https://belhaveen.vercel.app/');}
