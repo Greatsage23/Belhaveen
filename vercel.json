@@ -6,6 +6,10 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/voting",
+      "destination": "https://belhaveen-assessment.vercel.app/voting"
+    },
+    {
       "source": "/portal",
       "destination": "https://belhaveen-assessment.vercel.app/portal"
     },
