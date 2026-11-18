@@ -2,10 +2,10 @@ import {randomUUID} from 'node:crypto';
 import {cookies} from 'next/headers';
 import {z} from 'zod';
 import {query,audit,transaction} from '../../../lib/db';
-import {actor,session,origin,limit,logout} from '../../../lib/auth';
+import {actor,session,origin,limit,logout,authConfigured} from '../../../lib/auth';
 import {hash,verify,constant} from '../../../lib/crypto';
 export const runtime='nodejs';
-export async function GET(){try{const user=await actor(true);return Response.json({user});}catch{return Response.json({user:null,configured:!!process.env.DATABASE_URL&&!!process.env.SESSION_SECRET});}}
+export async function GET(){try{const user=await actor(true);return Response.json({user});}catch{return Response.json({user:null,configured:await authConfigured()});}}
 export async function POST(request:Request){try{origin(request);const p=await request.json();
  if(p.action==='logout'){await logout();return Response.json({ok:true});}
  if(p.action==='password'){const a=await actor(true);const password=z.string().min(12).max(128).parse(p.password);const [u]=await query('SELECT password_hash FROM bms_users WHERE id=$1',[a.id]);if(!await verify(String(p.current??''),u.password_hash))throw new Error('Current password is incorrect');if(await verify(password,u.password_hash))throw new Error('Choose a different private password');const digest=await hash(password);await query('UPDATE bms_users SET password_hash=$1,must_change=false,version=version+1 WHERE id=$2',[digest,a.id]);await session({...a,version:a.version+1,must_change:false});await audit(a.id,'password-change',a.id);return Response.json({ok:true});}

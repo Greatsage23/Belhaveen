@@ -5,10 +5,11 @@ The school homepage stays at belhaveen.vercel.app. `/voting` uses the assessment
 ## Database connection
 
 1. In Vercel, open **belhaveen-assessment → Storage → Connect Database**. Choose a PostgreSQL provider such as Neon from the Vercel Marketplace. Review its plan before creating the database. Connect it to Production and the appropriate Preview environments; use a separate database for previews that must not affect school data.
-2. Set server-only `DATABASE_URL` to the provider's pooled PostgreSQL connection URL with TLS. Set `SESSION_SECRET` to a random secret of at least 32 characters. Keep `APP_ORIGIN=https://belhaveen.vercel.app`. Do not prefix secrets with `NEXT_PUBLIC_` or commit `.env` files.
-3. From `assessment`, with DATABASE_URL securely provided in your environment, run `pnpm migrate`. This applies all migrations, including `006_supervised_voting.sql`, once inside a transaction. Do not run migrations through a publicly accessible URL.
-4. For a new empty database run `pnpm bootstrap` once. Initial administrator username and password are both `administrator`; the server stores a salted scrypt hash and requires a private password at first sign-in. Bootstrap refuses to overwrite existing administrators. Existing school records are not copied automatically: retain the source database and migrate/verify its records separately before switching a school portal with live records.
-5. Redeploy belhaveen-assessment and the school site from GitHub main. Keep the root project's `/voting`, `/api/*` and `/_next/*` rewrites. Open the voting administrator page and complete a demo ballot before opening real voting.
+2. Set server-only `DATABASE_URL` to the provider's pooled PostgreSQL connection URL with TLS. An optional `SESSION_SECRET` can override the random signing key created in the private `bms_auth_secrets` table during production setup. Keep `APP_ORIGIN=https://belhaveen.vercel.app`. Do not prefix secrets with `NEXT_PUBLIC_` or commit `.env` files.
+3. Deploy the GitHub main branch. The assessment production build automatically applies pending migrations, creates a private signing key and creates the initial administrator only when no administrator exists. Preview builds skip this setup. A database connection failure stops the new deployment rather than silently publishing an unconfigured app.
+4. Initial administrator username and password are both `administrator`. Sign in and choose a private password. Existing administrator accounts and records are preserved. Data from another provider is not copied automatically; keep the source database until any required records have been migrated and verified.
+5. Keep the root project's `/voting`, `/api/*` and `/_next/*` rewrites. Complete a demo ballot before opening real voting. For manual/local setup, use `pnpm migrate` and `pnpm bootstrap` with a securely supplied DATABASE_URL and SESSION_SECRET.
+
 
 ## Election preparation
 
