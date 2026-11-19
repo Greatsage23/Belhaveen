@@ -19,6 +19,6 @@ export async function POST(request:Request){try{origin(request);const p=await re
  if(!valid)valid=await verify(String(p.password??''),user.password_hash);
  if(user.role==='student'){const classId=z.uuid().parse(p.classId);valid=valid&&(await query('SELECT id FROM bms_students WHERE id=$1 AND class_id=$2',[user.id,classId])).length>0;}
  valid=valid&&user.role===requestedRole;
- if(!valid){await query("UPDATE bms_users SET failures=failures+1,locked_until=CASE WHEN failures+1>=5 THEN now()+interval '15 minutes' ELSE NULL END WHERE id=$1",[user.id]);await audit(user.id,'failed-login',user.id);throw new Error('Invalid login details');}
+ if(!valid){await query("UPDATE bms_users SET failures=CASE WHEN locked_until IS NOT NULL AND locked_until<=now() THEN 1 ELSE failures+1 END,locked_until=CASE WHEN (CASE WHEN locked_until IS NOT NULL AND locked_until<=now() THEN 1 ELSE failures+1 END)>=5 THEN now()+interval '15 minutes' ELSE NULL END WHERE id=$1",[user.id]);await audit(user.id,'failed-login',user.id);throw new Error('Invalid login details');}
  await query('UPDATE bms_users SET failures=0,locked_until=NULL WHERE id=$1',[user.id]);await session(user);await audit(user.id,'login',user.id);return Response.json({ok:true});
  }catch(e){return Response.json({error:e instanceof z.ZodError?'Check the login fields.':e instanceof Error?e.message:'Unable to sign in'},{status:400});}}
