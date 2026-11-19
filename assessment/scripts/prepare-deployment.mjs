@@ -1,3 +1,4 @@
+import {addOrganisingCandidate} from './add-organising-candidate.mjs';
 import {importElectionCandidates} from './import-election-candidates.mjs';
 import {randomBytes,randomUUID,scryptSync} from 'node:crypto';
 import pg from 'pg';
@@ -27,6 +28,7 @@ if(process.env.VERCEL_ENV!=='production'){
    console.log('Requested administrator recovery applied; private password change required.');
   }
   await importElectionCandidates(client);
+  await addOrganisingCandidate(client);
   await client.query('COMMIT');console.log('School and election database setup complete. Existing accounts and records preserved.');
  }catch(error){await client.query('ROLLBACK');throw error;}finally{await client.end();}
 }
