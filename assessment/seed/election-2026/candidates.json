@@ -1,0 +1,252 @@
+[
+  {
+    "portfolio": "School prefect",
+    "name": "Iddrisu Zakia",
+    "className": "",
+    "photo": "01.webp",
+    "source": "iddrisu zakia.jpeg",
+    "photoId": "f1fbaead-68ac-42dc-87ba-057c17b4fc4d",
+    "id": "d4feca1e-c176-4806-b129-e132677dcbca",
+    "photoSha256": "c45e48d9adf8489457c29448d7f3fcaccf49dfa9999105ac74d6629eaf11e0ba"
+  },
+  {
+    "portfolio": "School prefect",
+    "name": "Ziblim Kataale",
+    "className": "",
+    "photo": "02.webp",
+    "source": "ziblim kataale.jpg",
+    "photoId": "d4895680-93c6-417c-81d2-4613d77efb8b",
+    "id": "98e348b0-ed30-49a0-85f9-292c4a79db72",
+    "photoSha256": "d888ad937fe9a67f2ff111981389f6d25f6dde4e4333167d5aa60d11189578b2"
+  },
+  {
+    "portfolio": "School prefect",
+    "name": "Issahaku Jilma",
+    "className": "",
+    "photo": "03.webp",
+    "source": "issahaku jilma.jpg",
+    "photoId": "b045e106-428f-4a58-bba1-5da6b87cd62f",
+    "id": "72d68f50-de7b-4677-bd19-b17736a99459",
+    "photoSha256": "2a7f99220c154300511b55cf106873dff59cd233e6017b6a4be6e1ec056d2045"
+  },
+  {
+    "portfolio": "Head Girl",
+    "name": "Ahmed Yasmin",
+    "className": "",
+    "photo": "04.webp",
+    "source": "ahmed yasmin.jpg",
+    "photoId": "1aaff022-1c0e-4009-81a4-a01b62522f66",
+    "id": "4edaed93-f490-4c54-82eb-fc41fc76a853",
+    "photoSha256": "fcacf6033f5d80469bbd4e49af82c91c499981e278dfa685e0c2503f17e4dcb8"
+  },
+  {
+    "portfolio": "Head Girl",
+    "name": "Ali Iman Afiso",
+    "className": "",
+    "photo": "05.webp",
+    "source": "ali iman afiso.jpg",
+    "photoId": "8844a261-8298-4d8f-8f28-7ec6c78a3dd8",
+    "id": "86f3516f-0c93-445a-8439-8cc8bc9cd57e",
+    "photoSha256": "98cbf86ee14e07adb7e8e2828e335a9b0fda855a928cfc196ed83ae4108f46e1"
+  },
+  {
+    "portfolio": "Head Girl",
+    "name": "Kamal Hafsa",
+    "className": "",
+    "photo": "06.webp",
+    "source": "kamal hafsa.jpg",
+    "photoId": "6e0e331a-8aff-480d-9e2e-67fcd50f4a54",
+    "id": "2f818084-f119-4f2e-bf46-18c06e0f5922",
+    "photoSha256": "b570896eb9925f244e1306e415bf71be8693b287e1c46f8d44e10f001aba017b"
+  },
+  {
+    "portfolio": "General prefect",
+    "name": "Iddrisu Asia",
+    "className": "",
+    "photo": "07.webp",
+    "source": "iddrisu asia.jpg",
+    "photoId": "8dc69cca-2c93-4543-9777-a0e87fa3aedb",
+    "id": "02162191-aaa5-4bba-9442-17858684359a",
+    "photoSha256": "e598b2eeb2f7521bfafb64d343d69924d3684f402d445021f4cac48a26508531"
+  },
+  {
+    "portfolio": "General prefect",
+    "name": "Ayoberd Kristoden",
+    "className": "",
+    "photo": "08.webp",
+    "source": "ayoberd kristoden.jpg",
+    "photoId": "0e98c927-f072-48ef-a8ae-21e14af62303",
+    "id": "a43fd8b9-48cb-494c-af41-0ed2bff8d788",
+    "photoSha256": "8d520401df9fdbd79123ea89acd3408b0e1a8f0c7d1971f40c866bd9049bb150"
+  },
+  {
+    "portfolio": "Health prefect",
+    "name": "Anass Muslima",
+    "className": "",
+    "photo": "09.webp",
+    "source": "anass muslima.jpg",
+    "photoId": "f6af310a-9bef-4ecb-b406-6a8d5cf240da",
+    "id": "de54c2c0-614f-4d37-913d-4651b5c8cb10",
+    "photoSha256": "6699519e882bfb77e5619db23983318b6fdfac1706b97945cacecdc7e23e8ece"
+  },
+  {
+    "portfolio": "Health prefect",
+    "name": "Abubakari Abdul Rashid",
+    "className": "",
+    "photo": "10.webp",
+    "source": "Abubakari abdul rashid.jpg",
+    "photoId": "1e22ebe4-7fd1-4028-8c80-2a1895d9855b",
+    "id": "61619f06-a118-4286-9024-c80d361c912f",
+    "photoSha256": "01cf08ff89937470d380d7cfd515704cb428aaf99913f76e0f6460322c3827f7"
+  },
+  {
+    "portfolio": "Health prefect",
+    "name": "Mamme Esi Appiah",
+    "className": "",
+    "photo": "11.webp",
+    "source": "mamme esi appiah.jpg",
+    "photoId": "92c14fef-138a-41d6-b1fd-2fb5702cd1eb",
+    "id": "8579ff9e-562b-46ab-98ad-30b2c1721462",
+    "photoSha256": "f9bba384fe57079d016e5b53b148b69dbeddff706a60d8af8979279bc9e47572"
+  },
+  {
+    "portfolio": "Compound prefect",
+    "name": "Zamana Comfort",
+    "className": "",
+    "photo": "12.webp",
+    "source": "zamana comfort.jpg",
+    "photoId": "1428c610-fbeb-4b53-95ab-02c22b4c880f",
+    "id": "6a7329fd-8a1c-479b-aa88-2629e9bfb73e",
+    "photoSha256": "0abd68f1138fc6714f9dc23db00b38596d75319a6700f3b9c33a458a85969d4f"
+  },
+  {
+    "portfolio": "Compound prefect",
+    "name": "Jimah Nelson",
+    "className": "",
+    "photo": "13.webp",
+    "source": "jimah nelson.jpg",
+    "photoId": "a1dbd382-fe3f-4a3e-a875-d7c69f780e4e",
+    "id": "ef704215-3836-445d-8d99-e48c56b7eab3",
+    "photoSha256": "076b57b13f63fd94b3052e0759fcdb2cfa52def017d3b40c94e84b61eeb91bbd"
+  },
+  {
+    "portfolio": "Compound prefect",
+    "name": "Suayam Hayat",
+    "className": "",
+    "photo": "14.webp",
+    "source": "suayam hayat.jpg",
+    "photoId": "2eb24916-7e15-4bb7-92be-e0517f4f95da",
+    "id": "6bdac9c1-defb-40a0-8269-b6ea1cec88ed",
+    "photoSha256": "49f35c888ae27f29f2767fcb90a54a7e4f74a0abdf333cd09dfef26473b20e7c"
+  },
+  {
+    "portfolio": "Entertainment prefect",
+    "name": "Mensah Judith",
+    "className": "",
+    "photo": "15.webp",
+    "source": "mensah judith.jpg",
+    "photoId": "c9ca2168-c6eb-43a9-b688-937253d32378",
+    "id": "3f142186-10cd-445a-ba7d-f4909caf957f",
+    "photoSha256": "25554ca0ccb91c4f6b5866238323a0830bf90704ced4eec94685b5831e7c46df"
+  },
+  {
+    "portfolio": "Entertainment prefect",
+    "name": "Osei Vania",
+    "className": "",
+    "photo": "16.webp",
+    "source": "osei vania.jpg",
+    "photoId": "e7ee0f91-2ef6-4a20-ae11-2ee420622c94",
+    "id": "33338708-0450-46d9-b792-db42d98a4a81",
+    "photoSha256": "7a650670565d32dfb46457df8e165973253b2241416a7baed7db96df889d3b45"
+  },
+  {
+    "portfolio": "Entertainment prefect",
+    "name": "Abass Farhan",
+    "className": "",
+    "photo": "17.webp",
+    "source": "abass farhan.jpg",
+    "photoId": "44aaa82f-148c-4449-a4ed-8fcf42f02438",
+    "id": "39e33fdd-09de-4261-9604-26d221c576e7",
+    "photoSha256": "fb3b91d54cb8bbf9b92be4fbb0bfbba7423a4b0d6f2e1ae5733605ad8c5cc7a8"
+  },
+  {
+    "portfolio": "Sports prefect",
+    "name": "Mohammed Haliq",
+    "className": "",
+    "photo": "18.webp",
+    "source": "mohammed haliq.jpg",
+    "photoId": "af448add-dd2a-4419-8cda-49d2f7a8a16b",
+    "id": "5cd4f75c-b259-42b9-a60a-89e47be84657",
+    "photoSha256": "65e9706c236057e63caaa12e909d5cf38398b342911f0d026990d629bad4608c"
+  },
+  {
+    "portfolio": "Sports prefect",
+    "name": "Tahama Alphonses",
+    "className": "",
+    "photo": "19.webp",
+    "source": "Tahama alphonses.jpg",
+    "photoId": "7bc27e9d-ba5e-4a84-9900-19c3cd63821e",
+    "id": "ada70af4-cdc2-4692-b10a-8a1fb58715fc",
+    "photoSha256": "a7d77d11b1219e4939fc3412887e5cb4827f938fb0334cdee0244cf8b2c268ba"
+  },
+  {
+    "portfolio": "Office girl",
+    "name": "Bawah Nadra",
+    "className": "",
+    "photo": "20.webp",
+    "source": "bawah nadra.jpg",
+    "photoId": "06bb2af6-9314-4997-9e56-0861cc23e49e",
+    "id": "b662c474-18cb-4721-948e-c7ad0be78405",
+    "photoSha256": "018c2397597c74cf7022c0660235662a3bf4cad456065eca17c35f784cfb5230"
+  },
+  {
+    "portfolio": "Office girl",
+    "name": "Abugri Favour",
+    "className": "",
+    "photo": "21.webp",
+    "source": "abugri favour.jpg",
+    "photoId": "05cb8f03-548b-4a2f-92c8-935ffb196391",
+    "id": "225ceb55-2485-4d96-b1fb-7949862d8fd4",
+    "photoSha256": "3af80aa9506bd55885ee77577b4c17e27cc70e4ff25d94d685dcb34e3bd2f55f"
+  },
+  {
+    "portfolio": "Organization prefect",
+    "name": "Murtala Farida",
+    "className": "",
+    "photo": "22.webp",
+    "source": "murtala farida.jpg",
+    "photoId": "cda40ec3-d879-4d46-8b68-8c36a2e00cb0",
+    "id": "1a3d1de4-f742-41e9-ba01-85f4de37003a",
+    "photoSha256": "54d55fb3b74d471c61ff1523db87f17e3be0f555696768fb5c2c4f7915fabea1"
+  },
+  {
+    "portfolio": "Organization prefect",
+    "name": "Hussein Aaliya Nasara",
+    "className": "",
+    "photo": "23.webp",
+    "source": "hussein aaliya nasara.jpg",
+    "photoId": "3efa6039-a694-425d-9e37-51788f203c48",
+    "id": "0c2f0cb7-2329-4a08-8ae3-3bd57463cf2e",
+    "photoSha256": "56848d1cb1ae18656d304e4ccca5ae056a2775e995458faffb986afb755c02a6"
+  },
+  {
+    "portfolio": "Sanitation prefect",
+    "name": "Abdul Basit Saha",
+    "className": "",
+    "photo": "24.webp",
+    "source": "abdul basit saha.jpg",
+    "photoId": "388f4157-d7cd-4c2c-87c8-486166855f95",
+    "id": "1b7cbdb9-4a95-499d-9619-5829a1658bce",
+    "photoSha256": "c6cbf8078081cd14ac749e4a4903f51760d3f558a06192eded96ea7be3b7aaf1"
+  },
+  {
+    "portfolio": "Sanitation prefect",
+    "name": "Vicentia Awelana",
+    "className": "",
+    "photo": "25.webp",
+    "source": "vicentia awelana.jpg",
+    "photoId": "c1369a17-807c-4119-b983-d355c73a92ea",
+    "id": "c7dfae9a-aea8-4f59-86f9-483bea2cfb54",
+    "photoSha256": "a2c35cdac7cd1af25ffdf047ae2cdc5794d4d553d67659794b42cbc29c981539"
+  }
+]
