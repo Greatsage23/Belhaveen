@@ -1,3 +1,4 @@
+import {importPosterNominees} from './import-poster-nominees.mjs';
 import {addOrganisingCandidate} from './add-organising-candidate.mjs';
 import {importElectionCandidates} from './import-election-candidates.mjs';
 import {randomBytes,randomUUID,scryptSync} from 'node:crypto';
@@ -29,6 +30,7 @@ if(process.env.VERCEL_ENV!=='production'){
   }
   await importElectionCandidates(client);
   await addOrganisingCandidate(client);
+  await importPosterNominees(client);
   await client.query('COMMIT');console.log('School and election database setup complete. Existing accounts and records preserved.');
  }catch(error){await client.query('ROLLBACK');throw error;}finally{await client.end();}
 }
