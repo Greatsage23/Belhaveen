@@ -1,3 +1,4 @@
+import {activateAssessmentEntry} from './activate-assessment-entry.mjs';
 import {completeBasic7ParentAccess} from './complete-basic7-parent-access.mjs';
 import {addBasic7Students} from './add-basic7-students.mjs';
 import {assignBasic7Teachers} from './assign-basic7-teachers.mjs';
@@ -37,6 +38,7 @@ if(process.env.VERCEL_ENV!=='production'){
   await assignBasic7Teachers(client);
   await addBasic7Students(client);
   await completeBasic7ParentAccess(client);
+  await activateAssessmentEntry(client);
   await client.query('COMMIT');console.log('School and election database setup complete. Existing accounts and records preserved.');
  }catch(error){await client.query('ROLLBACK');throw error;}finally{await client.end();}
 }

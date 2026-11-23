@@ -9,7 +9,7 @@ export async function provisionStudent(c:PoolClient,input:{name:string;login:str
   const studentDigest=await hashStudentTemporary(password);
   const target=await c.query('SELECT id FROM bms_classes WHERE id=$1 AND NOT archived',[input.classId]);
   if(!target.rowCount)throw new Error('Select an active class');
-  await c.query("INSERT INTO bms_users(id,name,login,role,password_hash,must_change) VALUES($1,$2,$3,'student',$4,true)",[id,input.name,login,studentDigest]);
+  await c.query("INSERT INTO bms_users(id,name,login,role,password_hash,must_change) VALUES($1,$2,$3,'student',$4,$5)",[id,input.name,login,studentDigest,password!=='0000']);
   await c.query("INSERT INTO bms_users(id,name,login,role,password_hash,must_change) VALUES($1,$2,$3,'parent',$4,true)",[parentId,'Parent / guardian of '+input.name,'guardian:'+id,parentDigest]);
   await c.query('INSERT INTO bms_students(id,index_number,class_id,date_of_birth,guardian_user_id) VALUES($1,$2,$3,$4,$5)',[id,login,input.classId,input.dateOfBirth,parentId]);
   await c.query('INSERT INTO bms_parent_students(parent_id,student_id) VALUES($1,$2)',[parentId,id]);
