@@ -6,5 +6,11 @@
   "outputDirectory": ".next",
   "env": {
     "APP_ORIGIN": "https://belhaveen.vercel.app"
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/admissions/maintenance",
+      "schedule": "0 8 * * *"
+    }
+  ]
 }

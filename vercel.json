@@ -6,6 +6,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/admissions",
+      "destination": "https://belhaveen-assessment.vercel.app/admissions"
+    },
+    {
+      "source": "/admissions/:path*",
+      "destination": "https://belhaveen-assessment.vercel.app/admissions/:path*"
+    },
+    {
       "source": "/voting",
       "destination": "https://belhaveen-assessment.vercel.app/voting"
     },

@@ -7,7 +7,7 @@
     "dev": "next dev --port 4180",
     "build": "next build --webpack",
     "start": "next start --port 4180",
-    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test": "node --wasm-lazy-compilation --liftoff-only --experimental-strip-types --test tests/*.test.ts",
     "migrate": "node scripts/migrate.mjs",
     "bootstrap": "node scripts/bootstrap.mjs"
   },
@@ -16,6 +16,7 @@
     "docx": "^9.5.1",
     "lucide-react": "^0.468.0",
     "next": "16.2.6",
+    "nodemailer": "^10.6.1",
     "pdf-lib": "^1.17.1",
     "pg": "^8.16.3",
     "react": "19.2.6",
@@ -25,8 +26,10 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.6.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "^22.19.19",
+    "@types/nodemailer": "^8.0.2",
     "@types/pg": "^8.15.6",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
